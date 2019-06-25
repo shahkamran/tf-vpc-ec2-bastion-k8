@@ -30,8 +30,6 @@ Steps to use this repository.
 
 Also edit variables.tf to change key key_name
 default = "terraform-ec2-key"
-Kamrans-MacBook-Air:terraform-kube-cluster kamran$ 
-
 
 Change path in shell scripts pointing to absolute path for terraform.tfvars e.g. /Users/me/terraform.tfvars including init.sh, plans.sh apply.sh and destroy.sh.
 
