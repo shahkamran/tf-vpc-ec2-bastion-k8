@@ -45,12 +45,15 @@ Apply complete! Resources: 36 added, 0 changed, 0 destroyed.
 Outputs:
 
 aws_bastion_public_address =  (1.2.3.4)
+
 aws_eip_public_address = ec2-1.2.3.4.eu-west-2.compute.amazonaws.com (1.2.3.4)
+
 bucket_id = my-special-environment-terraform-2019-bucket-unique-aws-team-xyz
+
 connect_to_bastion = <ssh -i ~/keys/terraform-ec2-key ec2-user@1.2.3.4>
 
-Using above output you can simply execute result string in connect_to_bastian
 
+* Using above output you can simply execute result string in connect_to_bastian
 * ./destory.sh
 
 
