@@ -50,3 +50,5 @@ Now you can initialise, play, apply and destroy your infrastructure.
 * Install App
 * Delete App
 * Delete Cluster
+
+Make sure if you installed cluster, you must delete cluster before destroying your bastion instance using the terraform destroy.
