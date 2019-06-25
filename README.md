@@ -39,16 +39,29 @@ Now you can initialise, play, apply and destroy your infrastructure.
 * ./init.sh
 * ./plan.sh
 * ./apply.sh
+
+Apply complete! Resources: 36 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+aws_bastion_public_address =  (1.2.3.4)
+aws_eip_public_address = ec2-1.2.3.4.eu-west-2.compute.amazonaws.com (1.2.3.4)
+bucket_id = my-special-environment-terraform-2019-bucket-unique-aws-team-xyz
+connect_to_bastion = <ssh -i ~/keys/terraform-ec2-key ec2-user@1.2.3.4>
+
+Using above output you can simply execute result string in connect_to_bastian
+
 * ./destory.sh
 
 
 * Once up and running you will have to connect to bastian host using the command output provided after you apply terraform.
 * You will now have several scripts to carr out following from within your home directory;
-* Install Kube tools.
-* Create Cluster
-* Check Cluster
-* Install App
-* Delete App
-* Delete Cluster
+        
+* Install Kube tools (install-tools.sh )
+* Create Cluster (install-cluster.sh)
+* Check Cluster (check-cluster.sh)
+* Install Sample Docker App (install-app.sh )
+* Delete App (delete-app.sh)
+* Delete Cluster (delete-cluster.sh )
 
 Make sure if you installed cluster, you must delete cluster before destroying your bastion instance using the terraform destroy.
