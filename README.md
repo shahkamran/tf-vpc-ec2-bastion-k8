@@ -41,3 +41,12 @@ Now you can initialise, play, apply and destroy your infrastructure.
 * ./apply.sh
 * ./destory.sh
 
+
+* Once up and running you will have to connect to bastian host using the command output provided after you apply terraform.
+* You will now have several scripts to carr out following from within your home directory;
+* Install Kube tools.
+* Create Cluster
+* Check Cluster
+* Install App
+* Delete App
+* Delete Cluster
