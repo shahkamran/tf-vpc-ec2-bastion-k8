@@ -1,0 +1,6 @@
+aws_access_key = "****************************************"
+aws_secret_key = "****************************************"
+private_key_path = "~/keys/terraform-ec2-key"
+bucket_name = "kube-er-netes-terraform-201906-bucket-unique-aws-team"
+environment_tag = "development"
+billing_code_tag = "BILL007"
