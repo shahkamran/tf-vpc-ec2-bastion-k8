@@ -164,6 +164,34 @@ provisioner "file" {
     destination = "/home/ec2-user/install-app.sh"
 }
 
+
+provisioner "file" {
+  content = <<EOF
+  wget https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz
+  tar zxvf helm-v2.14.1-linux-amd64.tar.gz 
+  sudo mv ./linux-amd64/helm /usr/local/bin
+  rm helm-v2.14.1-linux-amd64.tar.gz 
+  rm -rf linux-amd64/
+  helm init
+  sleep 300
+  kubectl get po -n kube-system | grep tiller
+  helm repo update
+  kubectl create serviceaccount --namespace kube-system tiller
+  kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+  kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}' 
+  #helm install stable/mysql --name my-special-installation --set mysql-password=getoncheater
+  #helm delete --purge my-special-installation 
+  helm ls
+  helm install --name monitoring --namespace monitoring stable/prometheus-operator
+  kubectl get all -n monitoring
+
+  #kubectl edit -n monitoring service/monitoring-prometheus-oper-prometheus
+  EOF
+    destination = "/home/ec2-user/install-monitoring.sh"
+}
+
+
+
 provisioner "file" {
   content = <<EOF
   kubectl delete all -all
