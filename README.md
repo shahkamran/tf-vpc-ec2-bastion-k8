@@ -16,7 +16,7 @@ Steps to use this repository.
 * cd terraform-kube-cluster
 * chmod +x *.sh
 
-* mv ~/terraform.tfvars ~/terraform.tfvars.old
+* mv ~/terraform.tfvars ~/terraform.tfvars.$$.old
 * mv terraform.tfvars ~/terraform.tfvars
 * Modify ~/terraform.tfvars to add your account credentials.
 * Modify variables.tf to change Region, Region AZs, and AMI IDs.
