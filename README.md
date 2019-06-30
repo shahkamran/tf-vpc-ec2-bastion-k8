@@ -62,6 +62,7 @@ connect_to_bastion = <ssh -i ~/keys/terraform-ec2-key ec2-user@1.2.3.4>
 * Create Cluster (install-cluster.sh)
 * Check Cluster (check-cluster.sh)
 * Install Sample Docker App (install-app.sh )
+* Install Monitoring (install-monitoring.sh)
 * Delete App (delete-app.sh)
 * Delete Cluster (delete-cluster.sh )
 
