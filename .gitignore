@@ -1,4 +1,3 @@
-.terraform/*
-.terraform/*.*
-.terraform/
-.terraform/.
+.terraform/**
+!prod/environment.tfvars
+prod/**
