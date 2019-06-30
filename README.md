@@ -31,7 +31,7 @@ Steps to use this repository.
 Also edit variables.tf to change key key_name
 default = "terraform-ec2-key"
 
-Change path in shell scripts pointing to absolute path for terraform.tfvars e.g. /Users/me/terraform.tfvars including init.sh, plans.sh apply.sh and destroy.sh.
+Change path in shell scripts pointing to absolute path for terraform.tfvars e.g. ../../terraform.tfvars including init.sh, plans.sh apply.sh and destroy.sh.
 
 Now you can initialise, play, apply and destroy your infrastructure.
 * ./init.sh

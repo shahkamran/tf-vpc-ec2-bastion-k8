@@ -1,1 +1,1 @@
-terraform apply -var-file="/Users/username/terraform.tfvars" -var-file="./prod/environment.tfvars" -state="./prod/environment.state"
+terraform apply -var-file="../../terraform.tfvars" -var-file="./prod/environment.tfvars" -state="./prod/environment.state"
