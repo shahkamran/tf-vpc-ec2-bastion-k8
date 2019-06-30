@@ -42,7 +42,7 @@ variable "key_name" {
 Finally you will have to do is set up terraform/ environment variables and configure credentials and other parameters.
 1. ```mv ~/terraform.tfvars ~/terraform.tfvars.$$.old``` # Move any existing tfvars file to .old to avoid overwrite.
 2. ```mv terraform.tfvars ~/terraform.tfvars``` # Move the downloaded terraform.tfvars to your home directory.
-3. ```vi ~/terraform.tfvars``` # Add your credentials for AWS account
+3. ```vi ~/terraform.tfvars``` # Add your credentials for AWS account, S3 Bucket unieque name, private key path and optional environment and billing code.
 4. ```vi variables.tf``` # Make changes to your selected Region, Region AZs and add relevant AMI IDs.
 
 Optional - If your home directory ```~/``` and path ```../../``` are not same, or in other words if you are not in /Users/name/terraform/terraform-kube-cluster/ directory then you will have to edit scripts for terraform.tfvars file location.
