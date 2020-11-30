@@ -47,7 +47,7 @@ resource "aws_iam_instance_profile" "bastion_profile" {
   name  = "bastion_profile"
   role = "AllowEC2KubeAccess"
 
-  depends_on = ["aws_iam_role.AllowEC2KubeAccess"]
+  depends_on = [aws_iam_role.AllowEC2KubeAccess]
 
 }
 resource "aws_instance" "bastion" {
@@ -67,7 +67,7 @@ resource "aws_instance" "bastion" {
 //  user_data                   = file("./instances/userdata-bastion.sh")
   key_name                    = var.key_name
 
-  depends_on = ["aws_iam_instance_profile.bastion_profile"]
+  depends_on = [aws_iam_instance_profile.bastion_profile]
 
 }
 
@@ -81,14 +81,14 @@ resource "aws_eip" "bastion" {
 
 resource "null_resource" "connect_bastion" {
   connection {
-    host        = "${aws_eip.bastion.public_ip}"
+    host        = aws_eip.bastion.public_ip
     user        = "ec2-user"
     private_key = file("~/keys/terraform-ec2-key")
 
 //    private_key = "${file(var.private_key)}"
   }
   triggers = {
-    cluster_instance_ids = "${join(",", aws_instance.bastion.*.id,)}"
+    cluster_instance_ids = join(",", aws_instance.bastion.*.id,)
   }
   provisioner "file" {
     source      = "~/terraform/terraform-kube-cluster/instances/scripts/"
@@ -245,5 +245,5 @@ provisioner "remote-exec" {
   }
 */
 
-  depends_on = ["aws_eip.bastion", "aws_instance.bastion"]
+  depends_on = [aws_eip.bastion, aws_instance.bastion]
 }

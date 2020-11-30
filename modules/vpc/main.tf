@@ -44,7 +44,7 @@ resource "aws_route" "private_nat_gateway" {
   nat_gateway_id         = element(aws_nat_gateway.natgw.*.id, count.index)
   count = length(var.azs) * lookup(
     {
-      "${var.enable_nat_gateway}" = 1
+      "var.enable_nat_gateway" = 1
     },
     "true",
     0,
@@ -105,7 +105,7 @@ resource "aws_eip" "nateip" {
   vpc = true
   count = length(var.azs) * lookup(
    {
-     "${var.enable_nat_gateway}" = 1
+     "var.enable_nat_gateway" = 1
      }, "true", 0,
    )
 }
@@ -115,7 +115,7 @@ resource "aws_nat_gateway" "natgw" {
   subnet_id     = element(aws_subnet.public.*.id, count.index)
   count = length(var.azs) * lookup(
     {
-      "${var.enable_nat_gateway}" = 1
+      "var.enable_nat_gateway" = 1
     },
     "true",
     0,
