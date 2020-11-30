@@ -91,7 +91,7 @@ resource "null_resource" "connect_bastion" {
     cluster_instance_ids = "${join(",", aws_instance.bastion.*.id,)}"
   }
   provisioner "file" {
-    source      = "~/my-terraform/mine/instances/scripts/"
+    source      = "~/terraform/terraform-kube-cluster/instances/scripts/"
     destination = "/home/ec2-user"
   }
 
@@ -184,6 +184,7 @@ provisioner "file" {
 provisioner "file" {
   content = <<EOF
   kops validate cluster
+  kubectl cluster-info
 
   EOF
     destination = "/home/ec2-user/check-cluster.sh"

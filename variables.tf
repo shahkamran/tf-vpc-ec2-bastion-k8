@@ -12,6 +12,7 @@ variable "private_key_path" {
 }
 
 variable "existing-proper-user" {
+  default = "terraform-k8"
 }
 
 variable "region" {
