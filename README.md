@@ -11,7 +11,7 @@ This repository will configure folloing for you.
 - Scripts to install Kube tools, cluster, application and delete them all.
 
 Prerequisites:
-1. You must have terraform v0.12 installed, not v0.11.
+1. You must have terraform v0.13 installed, not v0.11 or v0.12.
 
 First of all you will have to set up local working location, pull repository and get it ready for execution.
 1. ```cd``` # Go to your home directory.
