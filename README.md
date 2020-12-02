@@ -1,4 +1,4 @@
-# terraform-kube-cluster
+# tf-vpc-ec2-bastion-k8
 
 The objective of this  terraform code in this git repository is create a completely new a environment in its own VPC on AWS with scripts ready to execute and deploy Kubernetes Cluster as well as an option of demo app.
 
@@ -20,8 +20,8 @@ First of all you will have to set up local working location, pull repository and
 1. ```cd``` # Go to your home directory.
 2. ```mkdir terraform``` # Create a terraform working directory of your choice, if you don't have one.
 3. ```cd terraform``` # Change to your terraform working directory.
-4. ```git clone https://github.com/shahkamran/terraform-kube-cluster.git``` # pull git repository
-5. ```cd terraform-kube-cluster``` # go to the repository local directory
+4. ```git clone https://github.com/shahkamran/tf-vpc-ec2-bastion-k8.git``` # pull git repository
+5. ```cd tf-vpc-ec2-bastion-k8``` # go to the repository local directory
 6. ```chmod +x *.sh``` # make scripts executeable
 
 You are required to have a Keypair in ~/keys/ directory and have its details added to couple of variables file.
