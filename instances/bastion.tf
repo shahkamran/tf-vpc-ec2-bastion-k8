@@ -91,7 +91,7 @@ resource "null_resource" "connect_bastion" {
     cluster_instance_ids = join(",", aws_instance.bastion.*.id,)
   }
   provisioner "file" {
-    source      = "~/terraform/terraform-kube-cluster/instances/scripts/"
+    source      = "~/terraform/tf-vpc-ec2-bastion-k8/instances/scripts/"
     destination = "/home/ec2-user"
   }
 
