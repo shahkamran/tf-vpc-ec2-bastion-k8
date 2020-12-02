@@ -1,14 +1,17 @@
 # terraform-kube-cluster
-Create a new Kubernetes cluster using Terraform
 
-This repository will configure folloing for you.
+The objective of this  terraform code in this git repository is create a completely new a environment in its own VPC on AWS with scripts ready to execute and deploy Kubernetes Cluster as well as an option of demo app.
+
+This repository will configure following for you.
 - VPC
 - Security Groups
 - IAM Role for EC2 instance
 - Required Routing and Subnets
 - EC2 Instance/ Bastion
 - S3 Bucket
-- Scripts to install Kube tools, cluster, application and delete them all.
+- Scripts to install Kube tools, cluster & demo application.
+- Script to delete the demo app and kubernetes cluster.
+- Scripts to execute terraform commands to make it easy for everyone.
 
 Prerequisites:
 1. You must have terraform v0.13 installed, not v0.11 or v0.12.
